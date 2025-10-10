@@ -3,6 +3,7 @@ package com.dvfernandoaquino.dscommerce.entities;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -97,6 +98,23 @@ public class User {
 		this.password = password;
 	}
 
+	
+
+	@Override
+	public int hashCode() {
+		return id != null ? id.hashCode() : 0;
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) return true;
+		if (obj == null || getClass() != obj.getClass()) return false;
+		
+		User other = (User) obj;
+		
+		return Objects.equals(id, other.id);
+	}
+
 	@Override
 	public String toString() {
 		return "User [id=" + id + ", name=" + name + ", email=" + email + ", phone=" + phone + ", birthDate="
@@ -107,5 +125,6 @@ public class User {
 		return orders;
 	}
 
+	
 	
 }

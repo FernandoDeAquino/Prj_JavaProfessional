@@ -1,6 +1,7 @@
 package com.dvfernandoaquino.dscommerce.entities;
 
 import java.util.HashSet;
+import java.util.Objects;
 import java.util.Set;
 
 import jakarta.persistence.Entity;
@@ -51,4 +52,22 @@ public class Category {
 		return products;
 	}
 
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (obj == null || getClass() != obj.getClass())
+			return false;
+		
+		Category category = (Category) obj;
+		return Objects.equals(Id, category.Id);
+		
+	}
+	
+	@Override
+	public int hashCode() {
+		return Id != null ? Id.hashCode() : 0;
+	}	
+
+	
 }

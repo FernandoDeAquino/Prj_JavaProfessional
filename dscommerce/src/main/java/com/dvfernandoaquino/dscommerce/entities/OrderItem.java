@@ -1,5 +1,7 @@
 package com.dvfernandoaquino.dscommerce.entities;
 
+import java.util.Objects;
+
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
 import jakarta.persistence.JoinColumn;
@@ -58,8 +60,18 @@ public class OrderItem {
 		this.price = price;
 	}
 
-	
-	
-	
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj) return true;
+		if (obj == null ||getClass() != obj.getClass())	return false;
+		
+		OrderItem other = (OrderItem) obj;
+		return Objects.equals(id, other.id);
+	}
+
+	@Override
+	public int hashCode() {
+		return id != null ? id.hashCode(): 0;
+	}
 
 }
