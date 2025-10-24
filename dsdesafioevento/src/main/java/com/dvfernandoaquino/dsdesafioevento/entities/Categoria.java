@@ -1,8 +1,12 @@
 package com.dvfernandoaquino.dsdesafioevento.entities;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 
@@ -14,6 +18,9 @@ public class Categoria {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	private String descricao;
+	
+	@OneToMany(mappedBy ="categoria")
+	private List<Atividade> atividade = new ArrayList<>();
 	
 	public Categoria() {
 		
@@ -40,4 +47,9 @@ public class Categoria {
 		this.descricao = descricao;
 	}
 
+	public List<Atividade> getAtividade() {
+		return atividade;
+	}
+
+	
 }
