@@ -22,8 +22,6 @@ public class Categoria {
 	@OneToMany(mappedBy ="categoria")
 	private List<Atividade> atividade = new ArrayList<>();
 	
-	/*teste*/
-	
 	public Categoria() {
 		
 	}
