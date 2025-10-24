@@ -23,6 +23,7 @@ public class Atividade {
 	@JoinColumn(name="categoria_id")
 	private Categoria categoria;
 	
+		
 	public Atividade(){
 		
 	}
