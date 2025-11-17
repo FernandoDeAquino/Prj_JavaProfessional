@@ -1,10 +1,6 @@
 package com.dvfernandoaquino.dscommerce.dto;
 
-import org.springframework.stereotype.Service;
-
 import com.dvfernandoaquino.dscommerce.entities.Product;
-
-import jakarta.persistence.Column;
 
 public class ProductDTO {
 
@@ -54,4 +50,11 @@ public class ProductDTO {
 		return imgUrl;
 	}
 
+	@Override
+	public String toString() {
+		return "ProductDTO [Id=" + Id + ", name=" + name + ", description=" + description + ", price=" + price
+				+ ", imgUrl=" + imgUrl + "]";
+	}
+
+	
 }
