@@ -11,7 +11,7 @@ public class ProductDTO {
 	private String imgUrl;
 	
 	public ProductDTO() {
-	
+		
 	}
 	
 	public ProductDTO(Long id, String name, String description, Double price, String imgUrl) {
@@ -49,7 +49,8 @@ public class ProductDTO {
 	public String getImgUrl() {
 		return imgUrl;
 	}
-
+	
+	
 	@Override
 	public String toString() {
 		return "ProductDTO [Id=" + Id + ", name=" + name + ", description=" + description + ", price=" + price

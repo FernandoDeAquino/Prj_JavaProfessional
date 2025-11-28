@@ -19,8 +19,6 @@ import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import com.dvfernandoaquino.dscommerce.dto.ProductDTO;
 import com.dvfernandoaquino.dscommerce.services.ProductService;
 
-import jakarta.servlet.Servlet;
-import net.bytebuddy.agent.VirtualMachine.ForHotSpot.Connection.Response;
 
 @RestController
 @RequestMapping(value = "/products")
@@ -37,9 +35,7 @@ public class ProductController {
 	
 	@GetMapping
 	public ResponseEntity<Page<ProductDTO>> findAll(Pageable pageable) {
-		
 		Page<ProductDTO> dto = service.findAll(pageable);
-		
 		return ResponseEntity.ok(dto);
 
 	}
@@ -61,7 +57,7 @@ public class ProductController {
 	}
 		
 	@DeleteMapping(value ="/{id}")
-	public ResponseEntity<Void> update(@PathVariable Long id){
+	public ResponseEntity<Void> delete(@PathVariable Long id){
 		service.delete(id);
 		return ResponseEntity.noContent().build();
 	}
