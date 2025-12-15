@@ -2,6 +2,8 @@ package com.dvfernandoaquino.dscommerce.controllers.handlers;
 
 import java.time.Instant;
 
+import org.hibernate.service.spi.ServiceException;
+import org.springframework.dao.DataIntegrityViolationException;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.FieldError;
@@ -30,6 +32,22 @@ public ResponseEntity<CustomError> resourceNotFound(ResourceNotFoundException e,
 @ExceptionHandler(DatabaseException.class)
 public ResponseEntity<CustomError> database(DatabaseException e, HttpServletRequest request) {
 	HttpStatus status = HttpStatus.BAD_REQUEST;
+	CustomError err = new CustomError(Instant.now(), status.value(), e.getMessage(), request.getRequestURI());
+			return ResponseEntity.status(status).body(err);
+		
+	}
+
+@ExceptionHandler(DataIntegrityViolationException.class)
+public ResponseEntity<CustomError> database(DataIntegrityViolationException e, HttpServletRequest request) {
+	HttpStatus status = HttpStatus.BAD_REQUEST;
+	CustomError err = new CustomError(Instant.now(), status.value(), e.getMessage(), request.getRequestURI());
+			return ResponseEntity.status(status).body(err);
+		
+	}
+
+@ExceptionHandler(ServiceException.class)
+public ResponseEntity<CustomError> database(ServiceException e, HttpServletRequest request) {
+	HttpStatus status = HttpStatus.NOT_FOUND;
 	CustomError err = new CustomError(Instant.now(), status.value(), e.getMessage(), request.getRequestURI());
 			return ResponseEntity.status(status).body(err);
 		
