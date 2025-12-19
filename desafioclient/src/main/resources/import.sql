@@ -1,0 +1,12 @@
+INSERT INTO tb_client(name,cpf,income,birth_Date,children) VALUES ('Mariana Aquino', '65825810419',1500.00,'2001-07-25',1);
+INSERT INTO tb_client(name,cpf,income,birth_Date,children) VALUES ('Alice Aquino','79234822331',1000.00,'2010-01-01',3);
+INSERT INTO tb_client(name,cpf,income,birth_Date,children) VALUES ('Rosemeire Aquino','05052469705',1800.00,'2009-10-10',2);
+INSERT INTO tb_client(name,cpf,income,birth_Date,children) VALUES ('Jairo de Mesquita','35621400704',1500.00,'2009-09-10',2);
+INSERT INTO tb_client(name,cpf,income,birth_Date,children) VALUES ('Vinicius Vidal','12463523700',1600.00,'2000-01-01',1);
+INSERT INTO tb_client(name,cpf,income,birth_Date,children) VALUES ('Carlos Salazar','08638892713',1600.00,'2001-05-10',3);
+INSERT INTO tb_client(name,cpf,income,birth_Date,children) VALUES ('Jayme de Souza','96003458720',2500.00,'1970-10-19',3);
+INSERT INTO tb_client(name,cpf,income,birth_Date,children) VALUES ('Vanessa Dario','11642959774',2000.00,'1985-05-05',2);
+INSERT INTO tb_client(name,cpf,income,birth_Date,children) VALUES ('Jorge Mautner', '22439875708',5000.00,'2000-10-10',3);
+INSERT INTO tb_client(name,cpf,income,birth_Date,children) VALUES ('Gustavo Justus','61184512736',1000.00,'2000-10-08',0);
+INSERT INTO tb_client(name,cpf,income,birth_Date,children) VALUES ('Andre Nunes','94042900763',1300.00,'1990-08-10',0);
+INSERT INTO tb_client(name,cpf,income,birth_Date,children) VALUES ('Mario Ribeiro','71200317750',1500.00,'2000-08-10',2);
